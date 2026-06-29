@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "Validata",
+  "version": "1.0.0",
+  "description": "Localized qualitative research workbench for Reddit subreddits. Capture, annotate, and export thread data entirely offline.",
+
+  "icons": {
+    "16":  "Logo/PNG/16.png",
+    "32":  "Logo/PNG/32.png",
+    "48":  "Logo/PNG/48.png",
+    "128": "Logo/PNG/128.png"
+  },
+
+  "permissions": ["storage", "sidePanel", "scripting", "tabs"],
+  "host_permissions": ["https://*.reddit.com/*"],
+
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+
+  "action": {
+    "default_title": "Validata"
+  },
+
+  "side_panel": {
+    "default_path": "popup/popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://*.reddit.com/*"],
+      "js": [
+        "services/constants.js",
+        "content/reddit-parser.js",
+        "content/post-capture.js",
+        "content/session-controller.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": ["content/*", "services/*", "popup/*"],
+      "matches": ["https://*.reddit.com/*"]
+    }
+  ]
+}

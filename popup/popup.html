@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Validata</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+
+  <!-- ── Header ─────────────────────────────────────────────────────────── -->
+  <header class="header">
+    <div class="header-brand">
+      <span class="header-dot"></span>
+      <span class="header-title">Validata</span>
+    </div>
+    <span class="header-sub">Reddit Research Workbench</span>
+  </header>
+
+  <!-- ── Session bar ────────────────────────────────────────────────────── -->
+  <section class="session-bar" id="session-bar">
+    <div class="session-status" id="session-status">
+      <span class="status-dot" id="status-dot"></span>
+      <span id="session-label">No active session</span>
+    </div>
+    <button class="btn btn-primary" id="btn-start-session" disabled>Start Session</button>
+    <button class="btn btn-danger hidden" id="btn-stop-session">Stop Session</button>
+  </section>
+
+  <!-- ── Error banner ───────────────────────────────────────────────────── -->
+  <div class="error-banner hidden" id="error-banner"></div>
+
+  <!-- ── Main content area ──────────────────────────────────────────────── -->
+  <main class="main">
+
+    <!-- Projects accordion -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Projects</h2>
+        <button class="btn btn-ghost btn-sm" id="btn-add-project">+ New Project</button>
+      </div>
+
+      <!-- Project list -->
+      <div id="project-list" class="project-list">
+        <div class="empty-state" id="empty-state">
+          No projects yet. Create one to begin capturing.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Add Project modal ─────────────────────────────────────────────── -->
+  <div class="modal-backdrop hidden" id="modal-backdrop">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+
+      <div class="modal-header">
+        <h3 id="modal-title">New Project</h3>
+        <button class="btn-icon" id="btn-modal-close" aria-label="Close">✕</button>
+      </div>
+
+      <div class="modal-body">
+
+        <label class="field-label" for="input-project-name">Project Name</label>
+        <input
+          class="input"
+          type="text"
+          id="input-project-name"
+          placeholder="e.g. r/startups — founder pain points"
+          maxlength="80"
+          autocomplete="off"
+        />
+
+        <div class="schema-section">
+          <p class="schema-title">Capture Settings</p>
+          <p class="schema-desc">
+            Post title and body are always captured. Choose what else to include.
+          </p>
+
+          <label class="checkbox-row">
+            <input type="checkbox" id="schema-timestamp" />
+            <span class="checkbox-label">Include timestamp</span>
+            <span class="checkbox-hint">Records when the post was published</span>
+          </label>
+
+          <label class="checkbox-row">
+            <input type="checkbox" id="schema-url" />
+            <span class="checkbox-label">Include post link</span>
+            <span class="checkbox-hint">Saves the direct URL to each captured post</span>
+          </label>
+
+          <label class="checkbox-row">
+            <input type="checkbox" id="schema-comments" />
+            <span class="checkbox-label">Capture comments</span>
+            <span class="checkbox-hint">Click individual comments to save them during a session</span>
+          </label>
+
+          <div class="schema-default-row">
+            <button class="btn btn-ghost btn-sm" id="btn-save-default" type="button">Save as default</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="btn-modal-cancel">Cancel</button>
+        <button class="btn btn-primary" id="btn-modal-create">Create Project</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── Export context menu (hidden, positioned by JS) ────────────────── -->
+  <div class="context-menu hidden" id="context-menu">
+    <button class="context-item" data-action="export-csv">Export as CSV</button>
+    <button class="context-item" data-action="export-json">Export as JSON</button>
+    <hr class="context-divider" />
+    <button class="context-item context-danger" data-action="clear">Clear Data</button>
+    <button class="context-item context-danger" data-action="delete">Delete Project</button>
+  </div>
+
+  <script src="../services/constants.js"></script>
+  <script src="popup.api.js"></script>
+  <script src="popup.ui.js"></script>
+  <script src="popup.actions.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

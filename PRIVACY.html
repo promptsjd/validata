@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Validata</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 720px;
+      margin: 60px auto;
+      padding: 0 24px;
+      color: #1a1a1a;
+      line-height: 1.7;
+    }
+    h1 { font-size: 1.8rem; margin-bottom: 4px; }
+    h2 { font-size: 1.1rem; margin-top: 40px; color: #111; }
+    p, li { font-size: 0.97rem; color: #333; }
+    ul { padding-left: 20px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 12px; }
+    th, td { text-align: left; padding: 10px 14px; border: 1px solid #ddd; font-size: 0.92rem; }
+    th { background: #f5f5f5; }
+    code { background: #f0f0f0; padding: 2px 6px; border-radius: 4px; font-size: 0.88rem; }
+    .subtitle { color: #666; font-size: 0.9rem; margin-bottom: 40px; }
+    hr { border: none; border-top: 1px solid #e5e5e5; margin: 32px 0; }
+  </style>
+</head>
+<body>
+
+  <h1>Privacy Policy</h1>
+  <p class="subtitle">Effective date: June 29, 2026</p>
+
+  <h2>Overview</h2>
+  <p>Validata is a browser extension that helps you capture and organize Reddit content for personal research. This policy explains what data the extension touches, where it goes, and what happens to it.</p>
+  <p>The short version: everything stays on your device. Validata does not collect, transmit, or share any data with anyone — including us.</p>
+
+  <hr />
+
+  <h2>What Data Validata Accesses</h2>
+  <p>When you use Validata during a browsing session on Reddit, the extension reads:</p>
+  <ul>
+    <li>The text content of Reddit posts and comments you choose to capture</li>
+    <li>Post titles, URLs, and timestamps from pages you visit while a session is active</li>
+    <li>No login information, account details, or personal identifiers are accessed or stored</li>
+  </ul>
+
+  <hr />
+
+  <h2>Where Your Data Is Stored</h2>
+  <p>All data captured by Validata is stored exclusively in your browser using Chrome's <code>storage.local</code> API. This storage:</p>
+  <ul>
+    <li>Exists only on your device</li>
+    <li>Is not synced to Chrome's cloud sync</li>
+    <li>Is not accessible to any website, server, or third party</li>
+    <li>Is permanently deleted when you clear a project, or when you uninstall the extension</li>
+  </ul>
+
+  <hr />
+
+  <h2>What Data Leaves Your Device</h2>
+  <p><strong>None.</strong> Validata makes no network requests. It has no backend server, no analytics, no crash reporting, and no telemetry of any kind. The extension operates entirely offline after installation.</p>
+
+  <hr />
+
+  <h2>Third-Party Services</h2>
+  <p>Validata does not integrate with any third-party services. No data is sent to advertising networks, analytics platforms, or any external service.</p>
+
+  <hr />
+
+  <h2>Permissions Explained</h2>
+  <p>Validata requests the following Chrome permissions:</p>
+  <table>
+    <thead>
+      <tr><th>Permission</th><th>Purpose</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>storage</code></td><td>Saves your projects and captured data locally on your device</td></tr>
+      <tr><td><code>sidePanel</code></td><td>Opens the Validata panel alongside Reddit in your browser</td></tr>
+      <tr><td><code>scripting</code></td><td>Injects the capture interface into Reddit pages during an active session</td></tr>
+      <tr><td><code>tabs</code></td><td>Identifies the active Reddit tab when you start a session</td></tr>
+      <tr><td><code>https://*.reddit.com/*</code></td><td>Restricts all extension activity to Reddit pages only</td></tr>
+    </tbody>
+  </table>
+  <p>No permission is used for any purpose beyond what is described above.</p>
+
+  <hr />
+
+  <h2>Children's Privacy</h2>
+  <p>Validata is not directed at children under 13 and does not knowingly collect any information from children.</p>
+
+  <hr />
+
+  <h2>Changes to This Policy</h2>
+  <p>If this policy changes, the updated version will be published at this URL with a new effective date. Continued use of the extension after a change constitutes acceptance of the updated policy.</p>
+
+  <hr />
+
+  <h2>Contact</h2>
+  <p>If you have questions about this privacy policy, open an issue at the <a href="https://github.com/promptsjd/Validata">project's GitHub repository</a>.</p>
+
+</body>
+</html>
